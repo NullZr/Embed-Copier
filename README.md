@@ -1,44 +1,33 @@
-# Discord Embed to JSON Converter
+# Embed Copier
 
-## Description
-**Discord Embed to JSON Converter** is an application developed using **JDA (Java Discord API)** that allows copying messages with Embeds from Discord and converting them into JSON format.
+Embed Copier is a simple Java application designed to fetch and copy Discord embed messages as JSON. It provides a user-friendly graphical interface built with Swing, allowing users to input a Discord bot token, channel ID, and message ID to retrieve embed data. The application leverages the JDA (Java Discord API) library to interact with Discord and Gson for JSON serialization.
 
 ## Features
-- Convert Embeds to JSON.
+- **Dynamic Token Input**: Enter your Discord bot token directly in the GUI to connect to Discord.
+- **Embed Retrieval**: Fetch embed messages from a specified Discord channel and message ID.
+- **Copy Functionality**: Easily copy the JSON data to the clipboard with a button or context menu.
+- **Minimalistic Design**: A clean, pastel-themed interface with rounded buttons for a modern look.
+- **Responsive Layout**: The JSON display area dynamically adjusts to window size, including fullscreen mode.
 
-## Installation & Running
-### Requirements
-- **Java 17+**
-- **Maven** (if building manually)
-- **Discord Bot Token**
+## Prerequisites
+- **Java 17+**: Ensure you have a compatible JDK installed.
+- **Maven**: Used for dependency management (optional if you manually include JARs).
+- **Discord Bot Token**: You need a bot token from the [Discord Developer Portal](https://discord.com/developers/applications) with the `MESSAGE_CONTENT` intent enabled.
 
-### Build
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/nullzr/embed-copier.git
-   cd embed-copier
-   ```
-2. Build the project using Maven:
-   ```sh
-   mvn install
-   ```
-3. Run the JAR file:
-   ```sh
-   java -jar target/embedcopier-{ver}-SNAPSHOT-jar-with-dependencies.jar
-   ```
-   
-## Example JSON
-```json
-{
-  "title": "Sample Embed",
-  "description": "This is a test Embed",
-  "color": 16711680,
-  "fields": [
-    { "name": "Field 1", "value": "Value 1", "inline": true },
-    { "name": "Field 2", "value": "Value 2", "inline": false }
-  ]
-}
-```
-## License
-This project is licensed under the **MIT** license. See the `LICENSE` file for details.
-
+## Dependencies
+- **JDA (Java Discord API)**: `net.dv8tion:JDA:5.0.0-beta.20` - For Discord integration.
+- **Gson**: `com.google.code.gson:gson:2.10.1` - For JSON serialization.
+Add these to your `pom.xml` if using Maven:
+```xml
+<dependencies>
+    <dependency>
+        <groupId>net.dv8tion</groupId>
+        <artifactId>JDA</artifactId>
+        <version>5.0.0-beta.20</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.10.1</version>
+    </dependency>
+</dependencies>
